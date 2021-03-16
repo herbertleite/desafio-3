@@ -1,0 +1,45 @@
+<h3 style="padding: 10px;">Adicionar/Editar</h3>
+
+<form style="padding: 10px" #formValidate="ngForm">
+
+  <div class="form-row">
+    <div class="form-group col-md-1">
+      <label for="id">Codigo</label>
+      <input type="text" [(ngModel)]="usuario.codigo" class="form-control" id="id" value="value" name="id"
+        autocomplete="false">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="nome">Nome</label>
+      <span style="color: red; font-size: 23px;" *ngIf="nomeValidate.invalid"> *</span>
+      <input type="text" [(ngModel)]="usuario.nome" #nomeValidate="ngModel" class="form-control" id="nome"
+        required="true" name="nome" autocomplete="false">
+
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="dataNascimento">Data Nascimento</label>
+      <input type="date" [(ngModel)]="usuario.dataNascimento" #dataValidate="ngModel" class="form-control" id="dataNascimento" name="dataNascimento"
+        autocomplete="false">
+    </div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="foto">Foto</label>
+        <input type="file" name="foto" [(ngModel)]="usuario.foto" class="form-control"  accept="image/png, image/jpeg"  multiple />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <button type="button" class="btn btn-primary" (click)="salvarUser()" style="margin-left: 10px;">Salvar</button>
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,26 @@
+
+<br/>
+<br/>
+
+<table class="table">
+  <thead class="thread-dark">
+    <tr>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Data Nascimento</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students ">  
+      <td>{{student.codigo}}</td>
+      <td>{{student.nome}}</td>
+      <td>{{student.dataNascimento}}</td>
+      <td>{{student.foto}}</td>
+       
+       <td><button [routerLink]="['/usuarioAdd']" routerLinkActive="router-link-active"   class="btn btn-warning">Editar</button></td>
+
+    </tr>
+  </tbody>
+</table>
